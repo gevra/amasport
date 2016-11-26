@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Club Secretary</title>
+</head>
+<body>
+ Welcome to the page of {{ match.host }} - {{ match.guest }}!
+ <br>
+ please input the events as they unfold and also the final scores when the match is finished.
+
+
+
+<div style="margin-top: 20px">
+        <div class="col-md-10 col-md-offset-1 jumbotron">
+            <div class="page-header" style="border-bottom: 1px solid #000000">
+                <h2>live events here (beta version)</h2>
+            </div>
+            <p style="text-align: left; font-size:14pt">
+                please input the name of the scorer, the minute when the goal was scored and against whom the goal was scored
+            </p>
+
+            <form class="form-inline" role="form" action='../input_goal/' method="get">
+                <div class="form-group">
+                    <div class="col-md-12" id="goal">
+                        <div class="form-group">
+                            <input type="text" name="scorername" class="form-control"
+                                   placeholder="e.g. Messi"
+                                   style="width: 600px;" {% if disable %} disabled="disabled" {% endif %}>
+                            <input type="text" name="minute" class="form-control"
+                                   placeholder="e.g. 55"
+                                   style="width: 600px;" {% if disable %} disabled="disabled" {% endif %}>
+                        </div>
+                        <button id="register_goal_button" type="submit" class="btn btn-default" {% if disable %} disabled="disabled" {% endif %}>
+                            Goooooal!
+                        </button>
+                    </div>
+                    <br><br><br>
+                    <div class="col-md-2" style="float:left; white-space: nowrap;">
+                        <label for="scored_against">scored against:</label>
+                        <select class="form-control" id="scored_against" name="scored_against">
+                            <option value={{ match.host }}>{{ match.host }}</option>
+                            <option value={{ match.guest }}>{{ match.guest }}</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

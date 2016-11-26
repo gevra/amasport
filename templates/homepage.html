@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Welcome to the amateur football league page
+{% endblock %}
+
+{% block body %}
+    <h3>Welcome to the amateur football league page</h3>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                        {{ matches.0.host_name }} {{ matches.0.host_score }} - {{ matches.0.guest_score }} {{ matches.0.guest_name }}</a>
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <a class="twitter-timeline"  href="https://twitter.com/hashtag/MUFCvAFC" data-widget-id="802528298932830208">#MUFCvAFC Tweets</a>
+{#                    <a class="twitter-timeline" href="https://twitter.com/TwitterDev/timelines/539487832448843776">National Park Tweets - Curated tweets by TwitterDev</a>#}
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                        {{ matches.1.host_name }} {{ matches.1.host_score }} - {{ matches.1.guest_score }} {{ matches.1.guest_name }} </a>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.</div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                        {{ matches.2.host_name }} {{ matches.2.host_score }} -  {{ matches.2.guest_score }} {{ matches.2.guest_name }}</a>
+                </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.</div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                        {{ matches.3.host_name }} {{ matches.3.host_score }} - {{ matches.3.guest_score }} {{ matches.3.guest_name }} </a>
+                </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login_section">
+        <a type="button" class="btn btn-success" href="{% url 'clubsec.views.load_club_sec_main' %}">Club Secretary<br>login</a>
+        <a type="button" class="btn btn-warning">League Secretary<br>login</a>
+    </div>
+{% endblock %}
+
+{% block script %}
+{#    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");#}
+<script type="text/javascript">
+twttr.widgets.createTimeline(
+  "802528298932830208",
+  document.getElementById("container"),
+  {
+    height: 400
+  }
+);
+</script>
+{% endblock %}

@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Club Secretary admin page
+{% endblock %}
+
+{% block body %}
+    <center><img id="logoPic" src="/static/images/{{ club_name_short }}.png" width="50%"/></center>
+
+    <form class="form-inline"  role="form" action='../submit_goal/' method="get">
+    <table align="center">
+        <tr><th colspan="5">CURRENT GAME</th></tr>
+
+        <tr>
+            <td align="right" valign="center">
+                {{ host_name }}
+            </td>
+            <td align="right">
+                <input type="text" name="host_score" value="{{ host_score }}">
+            </td>
+
+            <td align="center">-</td>
+            <td>
+                <input type="text" name="guest_score" value="{{ guest_score }}">
+            </td>
+            <td valign="center">
+                {{ guest_name }}
+            </td>
+        </tr>
+
+        <tr>
+            <td class="goalScorer" colspan="2" align="right">
+                <form>
+                    <label for="scorer_host">Goalscorer</label>
+                    <br>
+                    <input type="text" name="scorer_host" id="scorer_host">
+                </form>
+            </td>
+
+
+            <td></td>
+
+            <td class="goalScorer" colspan="2">
+                <form>
+                    <label for="scorer_guest">Goalscorer</label>
+                    <br>
+                    <input type="text" name="scorer_guest" id="scorer_guest">
+                </form>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="goalScorer"></td>
+            <td class="goalScorer" colspan="3" align="center">
+                <button id="track_story_button" type="submit" class="btn btn-amasport">
+                    Submit Goal
+                </button>
+{#                <input type="submit" value="Submit Goal">#}
+            </td>
+            <td class="goalScorer"></td>
+        <tr>
+
+
+    </table>
+    </form>
+
+    <table align="center">
+
+        <tr><th colspan="5">FIXTURES/RESULTS</th></tr>
+
+        <tr>
+            <td align="right">
+                Bluebell United FC
+            </td>
+            <td align="right">1</td>
+
+            <td align="center">-</td>
+            <td>0</td>
+            <td>
+                Bangor Celtic FC
+            </td>
+        </tr>
+
+        <tr>
+            <td class="goalScorer" colspan="2" align="right">
+                Goal Scorer
+            </td>
+
+
+            <td></td>
+
+            <td class="goalScorer" colspan="2">
+                Goal Scorer
+            </td>
+        </tr>
+
+    </table>
+{#    <h3>input scores and goals below</h3>#}
+{#    <div class="panel-group" id="accordion">#}
+{#        <div class="panel panel-default">#}
+{#            <div class="panel-heading">#}
+{#                <h4 class="panel-title">#}
+{#                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">#}
+{#                        Team A 0 - 0 Team B#}
+{#                    </a>#}
+{#                </h4>#}
+{#            </div>#}
+{#            <div id="collapse1" class="panel-collapse collapse in">#}
+{#                <div class="panel-body">#}
+{#                    <form class="col-sm-12 form-inline row">#}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-4 control-label">Team A</label>#}
+{#                            <div class="col-sm-1">#}
+{#                                <input class="form-control" id="teamA" type="text" value="{{ game1.host_score }}">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <div class="col-sm-1">#}
+{#                                <input class="form-control" id="teamB" type="text" value="{{ game1.guest_score }}">#}
+{#                            </div>#}
+{#                            <label class="col-sm-4 control-label">Team B</label>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
+{#                <hr>#}
+{#                here scorer#}
+{#                <hr>#}
+{#                <div name="submit_section">#}
+{#                    <button type="button" class="btn btn-info">Submit Goal</button>#}
+{#                    <button type="button" class="btn btn-danger">Submit Final</button>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="panel panel-default">#}
+{#            <div class="panel-heading">#}
+{#                <h4 class="panel-title">#}
+{#                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">#}
+{#                        Team C 0 - 0 Team A</a>#}
+{#                </h4>#}
+{#            </div>#}
+{#            <div id="collapse2" class="panel-collapse collapse">#}
+{#                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,#}
+{#                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad#}
+{#                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea#}
+{#                    commodo consequat.</div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="panel panel-default">#}
+{#            <div class="panel-heading">#}
+{#                <h4 class="panel-title">#}
+{#                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">#}
+{#                        Team A 0 - 0 Team F</a>#}
+{#                </h4>#}
+{#            </div>#}
+{#            <div id="collapse3" class="panel-collapse collapse">#}
+{#                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,#}
+{#                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad#}
+{#                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea#}
+{#                    commodo consequat.</div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+{% endblock %}

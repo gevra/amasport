@@ -16,7 +16,20 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+import clubsec.views as clubsec_views
+import leaguepage.views as leaguepage_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', leaguepage_views.index, name='index'),
+    url(r'^login/$', leaguepage_views.user_login, name='login'),
+    url(r'^logout/$', leaguepage_views.user_login, name='logout'),
+    url(r'^club_sec_main/$', clubsec_views.load_club_sec_main,
+      name='club_sec_main'),
+    # url(r'^register_goal/(?P<host>\d+)/(?P<guest>\d+)$', clubsec_views.register_goal,
+    #   name='register_goal'),
+    url(r'^submit_goal/$', clubsec_views.register_goal,
+       name='submit_goal'),
+    url(r'^submit_goal/(?P<score_host>\d+)/(?P<score_guest>\d+)/(?P<scorer_host>\w+)/(?P<scorer_guest>\w+)$', clubsec_views.register_goal,
+       name='submit_goal'),
 ]
